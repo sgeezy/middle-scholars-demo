@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
   # get 'pages/welcome'
-  root 'pages#welcome'
+  root 'blogs#index'
 
   devise_for :users
   
-  resources :blogs, only: [:index,:new, :create, :edit, :update, :show], shallow: true do
+  resources :blogs, only: [:index,:new, :create, :edit, :update, :show] do
     resources :posts
+    post "posts(.:format)" => "posts#create", as: :create_post
+    # get "posts/product/:category_id/:subcategory_id/:product_id/:model_id", to "posts#product",  as: :posts_product
+     
     #   resources :comments, only: [:show, :new, :create]
-    # end
   end  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
