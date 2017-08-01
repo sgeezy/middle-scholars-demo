@@ -12,6 +12,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem "sanitize"
+gem 'faker', '~> 1.6.1'
+gem 'devise'
+gem 'puma',         '3.4.0'
+gem 'devise-bootstrap-views'
+gem 'paperclip'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
